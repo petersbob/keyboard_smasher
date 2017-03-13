@@ -20,32 +20,6 @@
 		<h1>★POINTS★</h1>
 		<h1 id="points">0</h1>
 	</div>
-		<script src="script.js">
-			var secret_key;
-			var num_seconds = 10;
-			var points_element = document.getElementById("points");
-			var audio = new Audio('Jab.mp3');
-
-			var change_key = function(key) {
-				secret_key = Math.round(Math.random() * (91-65) + 65);
-				if (secret_key === 65) console.log("Secret key: " + secret_key);
-			}
-
-			document.addEventListener('keydown', (event) => {
-				event.preventDefault();
-				const key_press_val = event.which;
-				if (key_press_val === secret_key) {
-					audio.pause();
-					audio.currentTime = 0.0;
-					audio.play();
-					var num_points = parseInt(points_element.innerHTML);
-					points.innerHTML = String(num_points+1);
-					change_key(secret_key);
-				}
-			}, false);
-
-			change_key();
-			setInterval(change_key, num_seconds*1000);
-		</script>
+		<script src="script.js"></script>
 	</body>
 </html>

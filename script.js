@@ -163,7 +163,7 @@ var points_element = document.getElementById("points");
 var audio = new Audio('Jab.mp3');
 
 var change_key = function(key) {
-  secret_key = Math.round(Math.random() * (91-65) + 65);
+  secret_key = Math.floor(Math.random() * (91-65)) + 65;
   console.log("Secret key: " + keyCodes[secret_key]);
 }
 
